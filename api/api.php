@@ -1,4 +1,9 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header('HTTP/1.1 405 Method Not Allowed');
+    exit;
+  }
+  
 header("Content-type:application/json;charset=utf-8");
 $file = $_FILES['file'];//得到传输的数据
 //print_r($file);
