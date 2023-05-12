@@ -5,6 +5,7 @@
       }
     },
     "routes": [
-      { "src": "/api.php", "dest": "/api/api.php" }
+      { "src": "/api.php", "dest": "/api/api.php" },
+      { "src": "/","status": 302,"headers": { "Location":"https://moeyy.cn/img/" }}
     ]
   }
