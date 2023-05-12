@@ -1,8 +1,15 @@
 <?php
+$allowed_referer = 'https://moeyy.cn'; 
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     header('HTTP/1.1 405 Method Not Allowed');
     exit;
   }
+
+if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] != $allowed_referer) {
+    header('HTTP/1.1 403 Forbidden');
+    exit;
+}
   
 header("Content-type:application/json;charset=utf-8");
 $file = $_FILES['file'];//得到传输的数据
