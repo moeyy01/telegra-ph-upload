@@ -1,12 +1,10 @@
 <?php
-$allowed_referer = 'https://moeyy.cn'; 
-
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     header('HTTP/1.1 405 Method Not Allowed');
     exit;
   }
 
-if(!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] != $allowed_referer) {
+if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], 'moeyy.cn') === false) {
     header('HTTP/1.1 403 Forbidden');
     exit;
 }
