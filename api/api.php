@@ -4,10 +4,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     exit;
   }
 
-if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], 'moeyy.cn') === false) {
-    header('HTTP/1.1 403 Forbidden');
-    exit;
-}
+// if (empty($_SERVER['HTTP_REFERER']) || strpos($_SERVER['HTTP_REFERER'], 'moeyy.cn') === false) {
+//     header('HTTP/1.1 403 Forbidden');
+//     exit;
+// }
   
 header("Content-type:application/json;charset=utf-8");
 $file = $_FILES['file'];//得到传输的数据
